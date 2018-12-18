@@ -7,10 +7,10 @@
    http://www.springframework.org/schema/aop 
    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
-   <aop:config>
-      <aop:aspect id = "log" ref = "logging">
+  <aop:config>
+     <aop:aspect id = "log" ref = "logging">
          <aop:pointcut id = "selectAll" 
-            expression = "execution(* com.bridgelabz.aop.*.*(..))"/>
+            expression = "execution(* Loggging.*(..))"/>
          
          <aop:before pointcut-ref = "selectAll" method = "beforeAdvice"/>
          <aop:after pointcut-ref = "selectAll" method = "afterAdvice"/>
