@@ -1,6 +1,7 @@
 package com.bridgelabz.aop;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Exam 
@@ -12,6 +13,8 @@ public class Exam
 		      student.getName();
 		      student.getAge();
 		      student.printThrowException();
+		  	((ConfigurableApplicationContext)context).close();
+
 		   }
 		
 }

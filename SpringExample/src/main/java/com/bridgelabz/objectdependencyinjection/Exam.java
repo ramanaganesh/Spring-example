@@ -1,6 +1,7 @@
 package com.bridgelabz.objectdependencyinjection;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Exam 
@@ -11,5 +12,7 @@ public class Exam
 		System.out.println("xml file is loaded");
 		Student student=(Student) context.getBean("student");
 		student.studentAddress();
+		((ConfigurableApplicationContext)context).close();
+
 	}
 }

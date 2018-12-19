@@ -1,6 +1,7 @@
 package com.bridgelabz.autowired;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Body
@@ -10,5 +11,7 @@ public class Body
 		ApplicationContext context=new ClassPathXmlApplicationContext("autowiredbean.xml");
 		Human human=(Human) context.getBean("human");
 		human.startPumping();
+		((ConfigurableApplicationContext)context).close();
+
 	}
 }

@@ -1,6 +1,7 @@
 package com.bridgelabz.constructordependencyinjection;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Example
@@ -12,5 +13,7 @@ public class Example
 		student.display();
 		Student student1=(Student) context.getBean("student1");
 		student1.display();
+		((ConfigurableApplicationContext)context).close();
+
 	}
 }

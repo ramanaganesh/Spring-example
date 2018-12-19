@@ -1,6 +1,7 @@
 package com.bridgelabz.javaannotationexample;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Example {
@@ -12,5 +13,7 @@ public class Example {
 		      HelloWorld helloWorld = (HelloWorld) ctx.getBean("helloWorld");
 		      helloWorld.setMessage("Hello World!");
 		      helloWorld.getMessage();
+		  	((ConfigurableApplicationContext)ctx).close();
+
 		   }
 }
